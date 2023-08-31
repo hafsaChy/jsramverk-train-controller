@@ -23,7 +23,6 @@ To check vulnerabilities, run npm audit.
 
 
 
-<<<<<<< HEAD
 # design
 
 # inspiration
@@ -31,6 +30,9 @@ To check vulnerabilities, run npm audit.
 # colors
 
 # fonts
+<<<<<<< HEAD
 =======
 
 >>>>>>> 1d77dcdc3a134e59a95994e6b48c5578a29c8b7f
+=======
+>>>>>>> 5985c78052b68463820c33a496fce25674e9eac7
