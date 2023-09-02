@@ -23,11 +23,17 @@ node app.js
 ```
 
 ### Security audit
+<<<<<<< HEAD
 ```
 # To check vulnerabilities
 npm audit
 # To fix vulnerabilities
 npm audit fix
+=======
+To check vulnerabilities, run npm audit.
+<<<<<<< HEAD
+=======
+>>>>>>> ea7f5c4c6272cf4c1dd50a680d9f9a04b47aff0e
 
 ```
 
@@ -46,3 +52,4 @@ npm audit fix
 >>>>>>> 1d77dcdc3a134e59a95994e6b48c5578a29c8b7f
 =======
 >>>>>>> 5985c78052b68463820c33a496fce25674e9eac7
+>>>>>>> 73b0d91c3cb59f124f23eb051cb825a63f061578
