@@ -19,3 +19,23 @@ To run the app: node app.js
 
 ### Security audit
 To check vulnerabilities, run npm audit.
+<<<<<<< HEAD
+=======
+
+
+
+
+# design
+
+# inspiration
+
+# colors
+
+# fonts
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1d77dcdc3a134e59a95994e6b48c5578a29c8b7f
+=======
+>>>>>>> 5985c78052b68463820c33a496fce25674e9eac7
+>>>>>>> 73b0d91c3cb59f124f23eb051cb825a63f061578
