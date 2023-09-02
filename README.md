@@ -6,8 +6,10 @@ Repository for jsramverk course (DV1677), maintained by haco22 and glpa22.
 ### Steps
 
 ### Starting app
-To run the app on http://localhost:9000/frontend/: python3 -m http.server 9000
-
+```
+# To run the app on http://localhost:9000/frontend/:
+python3 -m http.server 9000
+```
 ### Framework
 
 ## Backend
@@ -15,11 +17,19 @@ To run the app on http://localhost:9000/frontend/: python3 -m http.server 9000
 ### Steps
 
 ### Starting app
-To run the app: node app.js
+```
+# To run the app
+node app.js
+```
 
 ### Security audit
-To check vulnerabilities, run npm audit.
+```
+# To check vulnerabilities
+npm audit
+# To fix vulnerabilities
+npm audit fix
 
+```
 
 
 
