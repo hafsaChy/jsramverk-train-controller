@@ -70,6 +70,9 @@ React is the largest and most popular framework and is judged to be that framewo
 
 
 ### References
+1. Reactjs(2023). Hämtad 3 September 2023 från https://reactjs.org/
+2. Stack Overflow(u.å) Most Popular Technologies Hämtad 3 September 2023 från https://insights.stackoverflow.com/survey/2020#technology-programming-scripting-andmarkup-languages-all-respondents
+3. Facebook(2023). Hämtad 3 September 2023 från https://github.com/facebook/react
 
 ### design
 
