@@ -68,10 +68,10 @@ why?
 
 ### References
 
-# design
+### design
 
-# inspiration
+### inspiration
 
-# colors
+### colors
 
-# fonts
+### fonts
