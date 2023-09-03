@@ -5,7 +5,7 @@ Repository for jsramverk course (DV1677), maintained by haco22 and glpa22.
 
 ### Starting app
 ```
-# To run the app on http://localhost:9000/frontend/:
+# To run the app on http://localhost:9000/ from frontend/
 python3 -m http.server 9000
 ```
 
@@ -22,7 +22,7 @@ npm install
 
 ### Starting app
 ```
-# To run the app
+# To run the app from backend/
 node app.js
 ```
 
@@ -36,16 +36,15 @@ npm audit fix
 #### Vulnerabilities found in Specifikation
 11 vulnerabilities found where severity of 3 are moderate and 8 are high.
 
-Vulnerabilities:
+<b>Vulnerabilities:</b>
 
-Inefficient Regular Expression Complexity vulnerability
-ReDoS
-Prototype Pollution
+<p>Inefficient Regular Expression Complexity vulnerability</p>
+<p>Regular expression denial of service (ReDoS)</p>
+<p>Prototype Pollution</p>
 
 High severity vulnerabillies:
 
 1. debug  <=2.6.8    -Inefficient Regular Expression Complexity vulnerability and ReDoS.
-this is fixed by running <i>npm audit fix</i>
 2. express  2.5.8 - 4.15.4 || 5.0.0-alpha.1 - 5.0.0-alpha.5    -Depends on vulnerable versions of debug, finalhandler, fresh, qs, send and serve-static.  
 3. finalhandler  <=1.0.5   -Depends on vulnerable versions of debug
 4. send  <=0.15.6 - Depends on vulnerable versions of debug, fresh, mime and ms.
@@ -60,13 +59,14 @@ Moderate severity vulnerabillies:
 3. semver  6.0.0 - 6.3.0 || 7.0.0 - 7.5.1   -ReDoS.
 
 
+<p>All vulnerabilities are fixed by running <i>npm audit fix</i>. During fixing vulnerabilities 7 packages are added, 21 packages are removed, 25 packages are changed.</p>
 
 ### Framework
 what?
 why?
 
 
-### References
+## References
 
 # design
 
