@@ -23,5 +23,5 @@ python3 -m http.server 9000
 
 Open your browser and point to the url:
 ```
-# localhost:9000
+# http://localhost:9000
 ```
