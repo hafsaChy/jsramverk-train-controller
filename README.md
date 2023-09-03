@@ -62,16 +62,21 @@ Moderate severity vulnerabillies:
 <p>All vulnerabilities are fixed by running <i>npm audit fix</i>. During fixing vulnerabilities 7 packages are added, 21 packages are removed, 25 packages are changed.</p>
 
 ### Framework
-what?
-why?
-
+React
+The advantage React has over Angular and Vue is that it is easier to learn.
+React is created and is being developed today by Facebook, which is the biggest framework today. React is used by several large websites, including Netflix, Paypal and AirBnB.
+React is flexible but has high complexity, which requires good knowledge of Javascript.
+React is the largest and most popular framework and is judged to be that framework which is most relevant in the labor market.
 
 ## References
+1. Reactjs(2023). Hämtad 3 September 2023 från https://reactjs.org/
+2. Stack Overflow(u.å) Most Popular Technologies Hämtad 3 September 2023 från https://insights.stackoverflow.com/survey/2020#technology-programming-scripting-andmarkup-languages-all-respondents
+3. Facebook(2023). Hämtad 3 September 2023 från https://github.com/facebook/react
 
-# design
+### design
 
-# inspiration
+### inspiration
 
-# colors
+### colors
 
-# fonts
+### fonts
