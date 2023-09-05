@@ -39,7 +39,7 @@ npm audit fix
 <b>Vulnerabilities:</b>
 
 <p>**Inefficient Regular Expression Complexity vulnerability:**[^1] </p>
-<p>**Regular expression denial of service (ReDoS):**"A ReDoS attack attempts to slow down or even render an application unavailable. It is attacked the A as in Availability in the famous CIA triad of cybersecurity. Attackers do this by providing an application with a malicious string to be processed by its regex engine against a vulnerable (or "evil") regex pattern. The processing of the malicious string exhausts the computing power or memory available, thus impacting the application's performance and, in certain circumstances, causing a denial of service (or DoS).</p>
+<p>**Regular expression denial of service (ReDoS):** "A ReDoS attack attempts to slow down or even render an application unavailable. It is attacked the A as in Availability in the famous CIA triad of cybersecurity. Attackers do this by providing an application with a malicious string to be processed by its regex engine against a vulnerable (or "evil") regex pattern. The processing of the malicious string exhausts the computing power or memory available, thus impacting the application's performance and, in certain circumstances, causing a denial of service (or DoS).</p>
 
 <p>Preventing ReDoS attacks usually comes down to good practices when defining your regex patterns."[^2] The ReDoS vulnerability is mainly due to the regex /(\s)+$/g.</p>
 <p>**Prototype Pollution:** "Prototype pollution is a JavaScript vulnerability that enables an attacker to add arbitrary properties to global object prototypes, which may then be inherited by user-defined objects."[^3]</p>
@@ -69,11 +69,11 @@ React is flexible but has high complexity, which requires good knowledge of Java
 React is the largest and most popular framework and is judged to be that framework which is most relevant in the labor market.
 
 ## References
-[^1]. last visited 05-09-2023.
-[^2]. https://learn.snyk.io/lesson/redos/, last visited 05-09-2023.
-[^3]. https://portswigger.net/web-security/prototype-pollution, last visited 05-09-2023.
-[^4]. https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks, last visited 05-09-2023.
-[^5]. Reactjs(2023), https://react.dev/, last visited 05-09-2023.
+[^1]: last visited 05-09-2023.
+[^2]: https://learn.snyk.io/lesson/redos/, last visited 05-09-2023.
+[^3]: https://portswigger.net/web-security/prototype-pollution, last visited 05-09-2023.
+[^4]: https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks, last visited 05-09-2023.
+[^5]: Reactjs(2023), https://react.dev/, last visited 05-09-2023.
 5. Stack Overflow(u.å) Most Popular Technologies, https://insights.stackoverflow.com/survey/2020#technology-programming-scripting-andmarkup-languages-all-respondents, last visited 03-09-2023.
 6. Facebook(2023), https://github.com/facebook/react, last visited 03-09-2023.
 
