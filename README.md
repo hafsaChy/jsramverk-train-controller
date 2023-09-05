@@ -65,10 +65,7 @@ Preventing ReDoS attacks usually comes down to good practices when defining your
 All vulnerabilities are fixed by running *npm audit fix*. During fixing vulnerabilities 7 packages are added, 21 packages are removed, 25 packages are changed.
 
 ### Framework
-In modern front-end web development, JavaScript frameworks are an essential part. These frameworks provide developers with tried and tested tools for building scalable, interactive web applications [^4]. There are different types of JavaScript frameworks. For example Angular, React, Svelte, Vue etc. The JavaScript framework [React](https://react.dev/) is choosen to develop the project's app. React is also known as React.js or ReactJS. React is created and is being developed today by Facebook, which is the biggest framework today. React is used by several large websites, including Netflix, Paypal and AirBnB [^5]. The advantage React has over Angular and Vue is that it is easier to learn. React has more popular stars than Angular on GitHub. User can even reuse system components in React which increases the productivity and optimizes coding practices[^6].
-
-React is flexible but has high complexity, which requires good knowledge of Javascript.[^7]
-React is the largest and most popular framework and is judged to be that framework which is most relevant in the labor market.
+In modern front-end web development, JavaScript frameworks are an essential part. These frameworks provide developers with tried and tested tools for building scalable, interactive web applications [^4]. There are different types of JavaScript frameworks. For example Angular, React, Svelte, Vue etc. The JavaScript framework [React](https://react.dev/) is choosen to develop the project's app. React is also known as React.js or ReactJS. React is created and is being developed today by Facebook, which is the biggest framework today [^8]. React is used by several large websites, including Netflix, Paypal and AirBnB [^5]. The advantage React has over Angular and Vue is that it is easier to learn. React has more popular stars than Angular on GitHub. User can even reuse system components in React which increases the productivity and optimizes coding practices[^6]. React is flexible but has high complexity, which requires good knowledge of Javascript [^7]. React is the largest and most popular framework and is judged to be that framework which is most relevant in the labor market [^9].
 
 ### design
 
@@ -86,5 +83,5 @@ React is the largest and most popular framework and is judged to be that framewo
 [^5]: https://www.sitepoint.com/vue-vs-react/#:~:text=The%20main%20difference%20between%20Vue,extended%20as%20a%20project%20grows, last visited 05-09-2023.
 [^6]: https://www.simform.com/blog/angular-vs-react/#:~:text=Popularity%3A%20Angular%20vs%20React&text=While%20looking%20at%20popular%20stats,was%20in%20the%20fifth%20spot, last visited 05-09-2023.
 [^7]: Stack Overflow(u.å) Most Popular Technologies, https://insights.stackoverflow.com/survey/2020#technology-programming-scripting-andmarkup-languages-all-respondents, last visited 03-09-2023.
-[^8]: Facebook(2023), https://github.com/facebook/react, last visited 03-09-2023.
-[^9]: Reactjs(2023), https://react.dev/, last visited 05-09-2023.
+[^8]: https://github.com/facebook/react, last visited 03-09-2023.
+[^9]: https://react.dev/, last visited 05-09-2023.
