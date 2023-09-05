@@ -38,9 +38,11 @@ npm audit fix
 
 <b>Vulnerabilities:</b>
 
-<p>Inefficient Regular Expression Complexity vulnerability</p>
-<p>Regular expression denial of service (ReDoS)</p>
-<p>Prototype Pollution</p>
+<p>**Inefficient Regular Expression Complexity vulnerability:**[^1] </p>
+<p>**Regular expression denial of service (ReDoS):**"A ReDoS attack attempts to slow down or even render an application unavailable. It is attacked the A as in Availability in the famous CIA triad of cybersecurity. Attackers do this by providing an application with a malicious string to be processed by its regex engine against a vulnerable (or "evil") regex pattern. The processing of the malicious string exhausts the computing power or memory available, thus impacting the application's performance and, in certain circumstances, causing a denial of service (or DoS).</p>
+
+<p>Preventing ReDoS attacks usually comes down to good practices when defining your regex patterns."[^2] The ReDoS vulnerability is mainly due to the regex /(\s)+$/g.</p>
+<p>**Prototype Pollution:** "Prototype pollution is a JavaScript vulnerability that enables an attacker to add arbitrary properties to global object prototypes, which may then be inherited by user-defined objects."[^3]</p>
 
 High severity vulnerabillies:
 
@@ -62,16 +64,19 @@ Moderate severity vulnerabillies:
 <p>All vulnerabilities are fixed by running <i>npm audit fix</i>. During fixing vulnerabilities 7 packages are added, 21 packages are removed, 25 packages are changed.</p>
 
 ### Framework
-React
-The advantage React has over Angular and Vue is that it is easier to learn.
-React is created and is being developed today by Facebook, which is the biggest framework today. React is used by several large websites, including Netflix, Paypal and AirBnB.
+In modern front-end web development, JavaScript frameworks are an essential part. These frameworks provide developers with tried and tested tools for building scalable, interactive web applications [^4]. There are differnent types of JavaScript frameworks. For example Angular, React, Svelte, Vue etc. The JavaScript framework [React](https://react.dev/) is choosen to develop the project's app. React is also known as React.js or ReactJS. The advantage React has over Angular and Vue is that it is easier to learn. React is created and is being developed today by Facebook, which is the biggest framework today. React is used by several large websites, including Netflix, Paypal and AirBnB.
 React is flexible but has high complexity, which requires good knowledge of Javascript.
 React is the largest and most popular framework and is judged to be that framework which is most relevant in the labor market.
 
 ## References
-1. Reactjs(2023). Hämtad 3 September 2023 från https://reactjs.org/
-2. Stack Overflow(u.å) Most Popular Technologies Hämtad 3 September 2023 från https://insights.stackoverflow.com/survey/2020#technology-programming-scripting-andmarkup-languages-all-respondents
-3. Facebook(2023). Hämtad 3 September 2023 från https://github.com/facebook/react
+[^1]. last visited 05-09-2023.
+[^2]. https://learn.snyk.io/lesson/redos/, last visited 05-09-2023.
+[^3]. https://portswigger.net/web-security/prototype-pollution, last visited 05-09-2023.
+[^4]. https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks, last visited 05-09-2023.
+[^5]. Reactjs(2023), https://react.dev/, last visited 05-09-2023.
+5. Stack Overflow(u.å) Most Popular Technologies, https://insights.stackoverflow.com/survey/2020#technology-programming-scripting-andmarkup-languages-all-respondents, last visited 03-09-2023.
+6. Facebook(2023), https://github.com/facebook/react, last visited 03-09-2023.
+
 
 ### design
 
