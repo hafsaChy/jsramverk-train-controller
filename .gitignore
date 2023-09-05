@@ -5,5 +5,3 @@ my-app/
 package-lock.json
 package.json
 backend/README.md
-setup_app.bash
-backend/.env.example
