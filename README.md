@@ -64,9 +64,11 @@ Moderate severity vulnerabillies:
 <p>All vulnerabilities are fixed by running <i>npm audit fix</i>. During fixing vulnerabilities 7 packages are added, 21 packages are removed, 25 packages are changed.</p>
 
 ### Framework
-In modern front-end web development, JavaScript frameworks are an essential part. These frameworks provide developers with tried and tested tools for building scalable, interactive web applications [^4]. There are differnent types of JavaScript frameworks. For example Angular, React, Svelte, Vue etc. The JavaScript framework [React](https://react.dev/) is choosen to develop the project's app. React is also known as React.js or ReactJS. The advantage React has over Angular and Vue is that it is easier to learn. React is created and is being developed today by Facebook, which is the biggest framework today. React is used by several large websites, including Netflix, Paypal and AirBnB.
-React is flexible but has high complexity, which requires good knowledge of Javascript.
-React is the largest and most popular framework and is judged to be that framework which is most relevant in the labor market.
+In modern front-end web development, JavaScript frameworks are an essential part. These frameworks provide developers with tried and tested tools for building scalable, interactive web applications [^4]. There are differnent types of JavaScript frameworks. For example Angular, React, Svelte, Vue etc. The JavaScript framework [React](https://react.dev/) is choosen to develop the project's app. React is also known as React.js or ReactJS. The advantage React has over Angular and Vue is that it is easier to learn. 
+
+<p>React is created and is being developed today by Facebook, which is the biggest framework today[^7]. React is used by several large websites, including Netflix, Paypal and AirBnB.
+React is flexible but has high complexity, which requires good knowledge of Javascript.[^6]
+React is the largest and most popular framework and is judged to be that framework which is most relevant in the labor market.</p>
 
 ## References
 [^1]: last visited 05-09-2023.
@@ -74,8 +76,8 @@ React is the largest and most popular framework and is judged to be that framewo
 [^3]: https://portswigger.net/web-security/prototype-pollution, last visited 05-09-2023.
 [^4]: https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks, last visited 05-09-2023.
 [^5]: Reactjs(2023), https://react.dev/, last visited 05-09-2023.
-5. Stack Overflow(u.å) Most Popular Technologies, https://insights.stackoverflow.com/survey/2020#technology-programming-scripting-andmarkup-languages-all-respondents, last visited 03-09-2023.
-6. Facebook(2023), https://github.com/facebook/react, last visited 03-09-2023.
+[^6]: Stack Overflow(u.å) Most Popular Technologies, https://insights.stackoverflow.com/survey/2020#technology-programming-scripting-andmarkup-languages-all-respondents, last visited 03-09-2023.
+[^7]: Facebook(2023), https://github.com/facebook/react, last visited 03-09-2023.
 
 
 ### design
