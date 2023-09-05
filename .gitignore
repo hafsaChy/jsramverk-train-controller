@@ -4,3 +4,4 @@ node_modules/
 my-app/
 package-lock.json
 package.json
+backend/README.md
