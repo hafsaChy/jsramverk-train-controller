@@ -63,6 +63,7 @@ Moderate severity vulnerabillies:
 
 ### Framework
 React
+
 The advantage React has over Angular and Vue is that it is easier to learn.
 React is created and is being developed today by Facebook, which is the biggest framework today. React is used by several large websites, including Netflix, Paypal and AirBnB.
 React is flexible but has high complexity, which requires good knowledge of Javascript.
