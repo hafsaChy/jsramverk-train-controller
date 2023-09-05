@@ -36,15 +36,16 @@ npm audit fix
 #### Vulnerabilities found in Specifikation
 11 vulnerabilities found where severity of 3 are moderate and 8 are high.
 
-<b>Vulnerabilities:</b>
+**Vulnerabilities:**
+Three kinds of vulnerabilities are found in Specifikation.
 
-<p>Inefficient Regular Expression Complexity vulnerability:[^1] </p>
-<p>Regular expression denial of service (ReDoS): "A ReDoS attack attempts to slow down or even render an application unavailable. It is attacked the A as in Availability in the famous CIA triad of cybersecurity. Attackers do this by providing an application with a malicious string to be processed by its regex engine against a vulnerable (or "evil") regex pattern. The processing of the malicious string exhausts the computing power or memory available, thus impacting the application's performance and, in certain circumstances, causing a denial of service (or DoS).</p>
+- **Inefficient Regular Expression Complexity vulnerability:**[^1]
+- **Regular expression denial of service (ReDoS):** "A ReDoS attack attempts to slow down or even render an application unavailable. It is attacked the A as in Availability in the famous CIA triad of cybersecurity. Attackers do this by providing an application with a malicious string to be processed by its regex engine against a vulnerable (or "evil") regex pattern. The processing of the malicious string exhausts the computing power or memory available, thus impacting the application's performance and, in certain circumstances, causing a denial of service (or DoS).
+Preventing ReDoS attacks usually comes down to good practices when defining your regex patterns."[^2] The ReDoS vulnerability is mainly due to the regex /(\s)+$/g.
 
-<p>Preventing ReDoS attacks usually comes down to good practices when defining your regex patterns."[^2] The ReDoS vulnerability is mainly due to the regex /(\s)+$/g.</p>
-<p>Prototype Pollution: "Prototype pollution is a JavaScript vulnerability that enables an attacker to add arbitrary properties to global object prototypes, which may then be inherited by user-defined objects."[^3]</p>
+- **Prototype Pollution:** "Prototype pollution is a JavaScript vulnerability that enables an attacker to add arbitrary properties to global object prototypes, which may then be inherited by user-defined objects."[^3]
 
-High severity vulnerabillies:
+**High severity vulnerabillies:**
 
 1. debug  <=2.6.8    -Inefficient Regular Expression Complexity vulnerability and ReDoS.
 2. express  2.5.8 - 4.15.4 || 5.0.0-alpha.1 - 5.0.0-alpha.5    -Depends on vulnerable versions of debug, finalhandler, fresh, qs, send and serve-static.  
@@ -55,20 +56,20 @@ High severity vulnerabillies:
 7. node-fetch  <2.6.7   -vulnerable to Exposure of Sensitive Information to an Unauthorized Actor .
 8. qs  <=6.2.3    -Prototype Pollution Protection Bypass.
 
-Moderate severity vulnerabillies:
+**Moderate severity vulnerabillies:**
 1. mime  <1.4.1   -ReDoS.
 2. ms  <2.0.0    -Inefficient Regular Expression Complexity vulnerability.
 3. semver  6.0.0 - 6.3.0 || 7.0.0 - 7.5.1   -ReDoS.
 
 
-<p>All vulnerabilities are fixed by running <i>npm audit fix</i>. During fixing vulnerabilities 7 packages are added, 21 packages are removed, 25 packages are changed.</p>
+All vulnerabilities are fixed by running *npm audit fix*. During fixing vulnerabilities 7 packages are added, 21 packages are removed, 25 packages are changed.
 
 ### Framework
 In modern front-end web development, JavaScript frameworks are an essential part. These frameworks provide developers with tried and tested tools for building scalable, interactive web applications [^4]. There are differnent types of JavaScript frameworks. For example Angular, React, Svelte, Vue etc. The JavaScript framework [React](https://react.dev/) is choosen to develop the project's app. React is also known as React.js or ReactJS. The advantage React has over Angular and Vue is that it is easier to learn. 
 
-<p>React is created and is being developed today by Facebook, which is the biggest framework today[^7]. React is used by several large websites, including Netflix, Paypal and AirBnB.
+React is created and is being developed today by Facebook, which is the biggest framework today[^7]. React is used by several large websites, including Netflix, Paypal and AirBnB.
 React is flexible but has high complexity, which requires good knowledge of Javascript.[^6]
-React is the largest and most popular framework and is judged to be that framework which is most relevant in the labor market.</p>
+React is the largest and most popular framework and is judged to be that framework which is most relevant in the labor market.
 
 ## References
 [^1]: last visited 05-09-2023.
