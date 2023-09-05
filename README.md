@@ -38,11 +38,11 @@ npm audit fix
 
 <b>Vulnerabilities:</b>
 
-<p>**Inefficient Regular Expression Complexity vulnerability:**[^1] </p>
-<p>**Regular expression denial of service (ReDoS):** "A ReDoS attack attempts to slow down or even render an application unavailable. It is attacked the A as in Availability in the famous CIA triad of cybersecurity. Attackers do this by providing an application with a malicious string to be processed by its regex engine against a vulnerable (or "evil") regex pattern. The processing of the malicious string exhausts the computing power or memory available, thus impacting the application's performance and, in certain circumstances, causing a denial of service (or DoS).</p>
+<p>Inefficient Regular Expression Complexity vulnerability:[^1] </p>
+<p>Regular expression denial of service (ReDoS): "A ReDoS attack attempts to slow down or even render an application unavailable. It is attacked the A as in Availability in the famous CIA triad of cybersecurity. Attackers do this by providing an application with a malicious string to be processed by its regex engine against a vulnerable (or "evil") regex pattern. The processing of the malicious string exhausts the computing power or memory available, thus impacting the application's performance and, in certain circumstances, causing a denial of service (or DoS).</p>
 
 <p>Preventing ReDoS attacks usually comes down to good practices when defining your regex patterns."[^2] The ReDoS vulnerability is mainly due to the regex /(\s)+$/g.</p>
-<p>**Prototype Pollution:** "Prototype pollution is a JavaScript vulnerability that enables an attacker to add arbitrary properties to global object prototypes, which may then be inherited by user-defined objects."[^3]</p>
+<p>Prototype Pollution: "Prototype pollution is a JavaScript vulnerability that enables an attacker to add arbitrary properties to global object prototypes, which may then be inherited by user-defined objects."[^3]</p>
 
 High severity vulnerabillies:
 
