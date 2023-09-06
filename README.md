@@ -69,11 +69,26 @@ In modern front-end web development, JavaScript frameworks are an essential part
 
 ### design
 
-### inspiration
+#### inspiration
 
-### colors
+https://practicaltypography.com/
 
-### fonts
+#### colors
+
+Minion Yellow (#F0DB4F) and Kournikova (#FFEC6D) Gradients
+
+Dark Charcoal (#323330)
+
+Blue Gem (#2915a3)
+
+Medium Red Violet (#BD2B80)
+
+#### fonts
+
+Inter UI (https://rsms.me/inter/)
+
+Hack monospace https://sourcefoundry.org/hack/ for code snippets.
+
 
 ## References
 [^1]: https://www.martellosecurity.com/kb/mitre/cwe/1333/, last visited 05-09-2023.
