@@ -4,10 +4,14 @@
   "description": "Start by cloning the repository from Github: ``` # git clone https://github.com/hafsaChy/jsramverk-train-controller ```",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "nyc --reporter=html --reporter=text --reporter=clover mocha --exit --timeout 10000",
+    "posttest": "npm run eslint",
+    "start": "node app.js",
+    "clean": "rm -rf node_modules package-lock.json",
+    "eslint": "eslint .",
+    "watch": "nodemon app.js",
     "style": "sass base.scss style.min.css --no-source-map",
-    "style-min": "sass base.scss style.min.css  --no-source-map --style compressed",
-    "start": "nodemon app.js"
+    "style-min": "sass base.scss style.min.css  --no-source-map --style compressed"
   },
   "keywords": [],
   "author": "",

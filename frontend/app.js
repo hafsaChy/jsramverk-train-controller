@@ -1,41 +1,47 @@
-// const express = require("express");
-// const app = express();
+const express = require('express');
+const bodyParser = require('body-parser');
+const path = require('path');
+const morgan = require('morgan');
+const cors = require('cors');
 
-// const port = 1337;
+require('dotenv').config();
 
-// // Add a route
-// app.get("/", (req, res) => {
-//     res.send("Hello World");
-// });
-
-// // Start up server
-// app.listen(port, () => console.log(`Example API listening on port ${port}!`));
-
-const express = require("express");
 const app = express();
 
-const port = 1337;
+const auth = require("./route/auth.js");
+const users = require("./route/users.js");
+const data = require("./route/data.js");
 
-// Add a route
-app.get("/", (req, res) => {
-    const data = {
-        data: {
-            msg: "Hello World"
-        }
-    };
+const authModel = require("./models/auth.js");
 
-    res.json(data);
+const port = process.env.PORT || 8666;
+
+app.use(cors());
+app.options('*', cors());
+
+app.disable('x-powered-by');
+
+app.set("view engine", "ejs");
+
+// don't show the log when it is test
+if (process.env.NODE_ENV !== 'test') {
+    // use morgan to log at command line
+    app.use(morgan('combined')); // 'combined' outputs the Apache style LOGs
+}
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use(express.static(path.join(__dirname, "public")));
+
+app.all('*', authModel.checkAPIKey);
+
+app.use("/users", users);
+app.use("/data", data);
+app.use("/", auth);
+
+const server = app.listen(port, () => {
+    console.log('auth api listening on port ' + port);
 });
 
-app.get("/hello/:msg", (req, res) => {
-    const data = {
-        data: {
-            msg: req.params.msg
-        }
-    };
-
-    res.json(data);
-});
-
-// Start up server
-app.listen(port, () => console.log(`Example API listening on port ${port}!`));
+module.exports = server;
