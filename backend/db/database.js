@@ -23,8 +23,8 @@ const collectionName = "keys";
 
 const database = {
     getDb: async function getDb() {
-        let dsn = `mongodb+srv://gloriapalm7810:<password>@cluster0.v8m4hqa.mongodb.net/?retryWrites=true&w=majority`;
-
+        let dsn = `mongodb+srv://${process.env.ATLAS_USERNAME}:${process.env.ATLAS_PASSWORD}@cluster0.v8m4hqa.mongodb.net/?retryWrites=true&w=majority`;
+        
         if (process.env.NODE_ENV === 'test') {
             dsn = "mongodb://localhost:27017/test";
         }

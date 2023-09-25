@@ -148,7 +148,7 @@ export default function MapPage() {
 
       // Set path coordinates
       let output = [];
-      geodata?.map((data) => {
+      geodata.map((data) => {
         const position = convertWgs84(data?.Geometry?.WGS84);
 
         const geo = {
