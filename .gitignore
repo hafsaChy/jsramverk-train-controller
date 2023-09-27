@@ -35,3 +35,14 @@ my-app/
 package-lock.json
 package.json
 backend/README.md
+
+
+#hafsa
+.github/
+backend/node_modules/
+backend/routes/app1.js
+frontend/frontend/
+me-react/src/Me.js
+me-react/src/Report.js
+my-app1/
+train-controller-app/
