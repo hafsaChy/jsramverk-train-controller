@@ -37,424 +37,82 @@
   }
 }
 
-body {
-  background-color: #222222;
-  color: white;
-  font-family: monospace;
-  font-size: calc(10px + 1vmin);
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-}
-
-body::-webkit-scrollbar {
-  display: none;
-}
-
-a {
-  color: white;
-  text-decoration: none;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 2px;
-  padding: 0px;
-}
-
-table {
-  border-spacing: 2px 2px;
-  margin: 2px 0px;
-  width: 100%;
-}
-
-td,
-th {
-  border: 0px;
-  margin: 0px;
-  padding: 10px;
-}
-
-td {
-  vertical-align: top;
-  white-space: nowrap;
-}
-
-th {
-  text-transform: uppercase;
-}
-
-tr {
-  border: 0px;
-  margin: 0px;
-}
-
-thead > tr {
-  background: #333;
-}
-
-tbody > tr:nth-child(odd) {
-  background: #444;
-}
-
-tbody > tr:nth-child(even) {
-  background: #333;
-}
-
-/* Custom classes */
-
-.activityType {
-  color: #f1f1f1;
-  text-align: center;
-  text-transform: uppercase;
-}
-
-.clock {
-  text-align: right;
-  width: fit-content;
-}
-
-.currentTime {
-  font-size: calc(18px + 1vmin);
-  margin: 10px 10px;
-  text-align: right;
-}
-
-.content {
-  display: flex;
-  flex-direction: row;
-  align-items: stretch;
-  width: 100%;
-}
-
-.errorpage {
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-.error404 {
-  font-size: calc(100px + 1vmin);
-}
-
-.infoWindow button
-.gm-style-iw + div {
-  display: none;
-}
-
-.gm-ui-hover-effect {
-  display: none !important;
-}
-
-.half {
-  width: 50%;
-}
-
-.helpText {
-  color: rgba(241, 241, 241, 0.5);
-  font-size: calc(8px + 0.5vmin);
-}
-
-.homePage {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 1200px;
-}
-
-.homePageInfo > li {
-  padding: 10px;
-}
-
-.infoWindow {
-  color: #222222;
-  font-family: monospace;
-}
-
-.infoWindow > span {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-
-.infoWindowIcon {
-  display: inline;
-  margin-right: 0.275rem;
-  width: 1rem;
-  height: 1rem;
-}
-
-.lastUpdateText {
-  font-size: calc(8px + 1vmin);
-  margin: 10px auto 50px;
-}
-
-.leaflet-container {
-  width: 100wh;
-  height: 100vh;
-  z-index: 1;
-}
-
-.locationId {
-  color: #f1f1f1;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  margin: 10px 10px;
-  text-align: left;
-}
-
-.locationSignature {
-  color: rgba(241, 241, 241, 0.25);
-  font-size: calc(8px + 0.5vmin);
-}
-
-.mapWindowHeader {
-  background: rgba(34, 34, 34, 0.85);
-  position: absolute;
-  top: 0;
-  right: 0;
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  line-height: 1.4;
+  font-family: sans-serif;
+}
+
+h1 {
+  font-size: 1.8rem;
+}
+
+h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1.4rem;
+}
+
+p {
+  margin-bottom: 1.4rem;
+  font-size: 1rem;
+}
+
+.root {
+  height: 100vh;
   width: 100vw;
-  z-index: 99;
+  display: flex;
 }
 
-.mapWindowHeaderIcon {
-  display: inline;
-  margin-right: 0.275rem;
-  width: 1.5rem;
-  height: 1.5rem;
+.delayed {
+  height: 100vh;
+  width: 40vw;
+  padding: 2rem;
+  overflow: scroll;
+  background-color: white;
 }
 
-.noContentError {
-  margin: 0 auto;
-  text-align: center;
+.map {
+  height: 100vh;
+  width: 60vw;
 }
 
-.pageTitle {
-  width: auto;
+.delayed-trains {
+  display: flex;
+  flex-direction: column;
 }
 
-.scheduleLocation {
-  width: 400px;
-}
-
-.scheduleTrack {
-  text-align: center;
-  width: 80px;
-}
-
-.scheduleTimeAtLocation {
-  width: 200px;
-}
-
-.scheduleInfo {
-  width: auto;
-}
-
-.stationBoard {
+.delayed-trains>div {
   display: flex;
   flex-direction: row;
-  align-items: stretch;
-  width: 100%;
-}
-
-.stationBoardTrainIdent {
-  text-align: left;
-  width: 80px;
-}
-
-.stationBoardLocation {
-  width: 250px;
-}
-
-.stationBoardTimeAtLocation {
-  width: 80px;
-}
-
-.stationBoardTrackAtLocation {
-  text-align: center;
-  width: 80px;
-}
-
-.stationBoardInfo {
-  width: auto;
-}
-
-.tableContent {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-  overflow: scroll;
-  width: 100%;
-}
-
-.tableContent::-webkit-scrollbar {
-  display: none;
-}
-
-.trainInfo {
-  color: rgba(241, 241, 241, 0.75);
-  font-size: calc(12px + 0.5vmin);
-  margin: -10px 10px 10px;
-}
-
-.trainMessageCard {
-  background-color: #333;
-  margin: 10px;
-  padding: 10px;
-}
-
-.trainStatus {
-  margin: 0px 10px;
-}
-
-/* Media queries */
-@media screen and (max-width: 1000px) {
-  body {
-    font-size: calc(8px + 0.8vmin);
-  }
-}
-@media screen and (max-width: 1200px) {
-  .stationBoard {
-    flex-direction: column;
-  }
-  .half {
-    width: 100%;
-  }
-}
-
-/* Loading indicator */
-.loading {
-  display: flex;
+  border-top: 1px solid #ccc;
+  padding: 0.2rem 0.8rem;
   align-items: center;
-  justify-content: center;
-  height: 3rem;
-  margin: 1rem;
+  cursor: pointer;
 }
 
-.loading-dot {
-  height: 0.5rem;
-  width: 0.5rem;
-  border-radius: 1rem;
-  background-color: rgb(200, 200, 200);
-  display: inline-block;
-  margin: 0.5rem;
-  animation: loading 6s cubic-bezier(0.76, 0, 0.24, 1) infinite;
-  vertical-align: middle;
+.delayed-trains>div:nth-of-type(2n) {
+  background-color: #eee;
 }
 
-.loading-dot:nth-child(1) {
-  animation-delay: 0s;
-}
-.loading-dot:nth-child(2) {
-  animation-delay: 0.2s;
-}
-.loading-dot:nth-child(3) {
-  animation-delay: 0.4s;
-}
-.loading-dot:nth-child(3) {
-  animation-delay: 0.6s;
-}
-.loading-dot:nth-child(4) {
-  animation-delay: 0.8s;
-}
-.loading-dot:nth-child(5) {
-  animation-delay: 1s;
-}
-.loading-dot:nth-child(6) {
-  animation-delay: 1.2s;
-}
-.loading-dot:nth-child(7) {
-  animation-delay: 1.4s;
-}
-.loading-dot:nth-child(8) {
-  animation-delay: 1.6s;
-}
-.loading-dot:nth-child(9) {
-  animation-delay: 1.8s;
-}
-.loading-dot:nth-child(10) {
-  animation-delay: 2s;
+.train-number {
+  font-size: 2rem;
+  font-weight: bold;
+  width: 30%;
 }
 
-@keyframes loading {
-  0%,
-  100% {
-    background-color: rgb(225, 225, 225);
-    height: 0.5rem;
-  }
-  20% {
-    height: 3rem;
-  }
-  40% {
-    height: 0.5rem;
-  }
-  50% {
-    background-color: rgb(175, 175, 175);
-    height: 0.5rem;
-  }
-  70% {
-    height: 3rem;
-  }
-  90% {
-    height: 0.5rem;
-  }
+.current-station {
+  width: 30%;
 }
 
-/* Light mode */
-/*
-@media (prefers-color-scheme: light) {
-  body {
-    background-color: #e7eaed;
-    color: #222222;
-  }
-
-  a {
-    color: #222222;
-  }
-
-  thead > tr {
-    background: #C7C7C7;
-  }
-
-  tbody > tr:nth-child(odd) {
-    background: #E4E4E4;
-  }
-
-  tbody > tr:nth-child(even) {
-    background: #C7C7C7;
-  }
-
-  .activityType {
-    color: #2f2f2f;
-  }
-
-  .helpText {
-    color: rgba(14, 14, 14, 0.5);
-  }
-
-  .locationId {
-    color: #2f2f2f;
-  }
-
-  .locationSignature {
-    color: rgba(14,14,14,0.50);
-  }
-
-  .mapWindowHeader {
-    background: rgba(221, 221, 221, 0.85);
-  }
-
-  .trainInfo {
-    color: rgba(14, 14, 14, 0.75);
-  }
-
-  .trainMessageCard {
-    background-color: #C7C7C7;
-    border-radius: 0px;
-  }
+.ticket-container {
+  padding: 2rem;
 }
-*/

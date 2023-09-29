@@ -1,5 +1,5 @@
 function renderMainView() {
-    let container = document.getElementById("container");
+    let container = document.getElementById("root");
 
     while (container.firstChild) {
         container.removeChild(container.firstChild);
@@ -78,7 +78,7 @@ function outputDelay(item) {
 }
 
 function renderTicketView(item) {
-    let container = document.getElementById("container");
+    let container = document.getElementById("root");
     let newTicketId = 0;
 
     while (container.firstChild) {
