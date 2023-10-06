@@ -1,13 +1,13 @@
-import { Ionicons } from '@expo/vector-icons';
-import { SafeAreaView } from 'react-native-safe-area-context';
 import React, {useState, useEffect} from 'react';
+// import { Ionicons } from 'react-ionicons';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import Tabell from './components/Tabell';
 import Map from './components/Map';
 import Auth from "./components/auth/Auth";
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import trafik from './models/trafik';
-import FlashMessage from 'react-native-flash-message';
+import FlashMessage from 'react-flash-message';
 import Sparade from './components/Sparade'
 import { Base, Typography } from './styles/index.js';
 import authModel from './models/auth'
@@ -49,10 +49,10 @@ export default function App() {
             margin:5,
             borderRadius:10,
           },
-          tabBarIcon: ({ color, size }) => {
-            let iconName = routeIcons[route.name] || "alert";
-            return <Ionicons name={iconName} size={size} color={color} />;
-          },
+          // tabBarIcon: ({ color, size }) => {
+          //   let iconName = routeIcons[route.name] || "alert";
+          //   return <Ionicons name={iconName} size={size} color={color} />;
+          // },
           tabBarActiveTintColor: '#03a9f4',
           tabBarInactiveTintColor: 'gray',
           })}

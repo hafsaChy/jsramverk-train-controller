@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import AuthModel from '../../models/auth';
 import AuthFields from './AuthFields';
-import { showMessage } from 'react-native-flash-message';
+import { showMessage } from 'react-flash-message';
 
 export default function Login({navigation, setIsLoggedIn}) {
     const [auth, setAuth] = useState({});

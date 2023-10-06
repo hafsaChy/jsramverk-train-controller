@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
-import { View, Text, TextInput, Button } from "react-native";
+import React, { View, Text, TextInput, Button } from "react";
 import { Typography, Forms, Base } from '../../styles';
-import { showMessage } from 'react-native-flash-message';
+import { showMessage } from 'react-flash-message';
 
 export default function AuthFields({ auth, setAuth, title, submit, navigation}) {
 

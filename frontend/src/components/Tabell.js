@@ -1,5 +1,4 @@
-import { RefreshControl, Text, ScrollView } from 'react-native';
-import React, { useState } from 'react';
+import React, { useState, RefreshControl, Text, ScrollView } from 'react';
 import { Base, Typography } from '../styles/index.js';
 
 

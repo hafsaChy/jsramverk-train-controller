@@ -1,12 +1,11 @@
-import { RefreshControl, StyleSheet, Text, View, ScrollView } from 'react-native';
-import React, {useState, useEffect} from 'react';
-import MapView from 'react-native-maps';
-import { Marker, Circle } from "react-native-maps";
+import React, { useState, useEffect, RefreshControl, StyleSheet, Text, View, ScrollView } from 'react';
+import { MapView } from 'leaflet';
+import { Marker, Circle } from "leaflet";
 import * as Location from 'expo-location';
 import getCoordinates from "../models/KoordMaker";
 // import { Ionicons } from '@expo/vector-icons';
-var train = require('../../public/train copy.png')
-var dancer = require('../../public/dancing.png')
+var train = require('../assets/train.png')
+var dancer = require('../assets/dancing.png')
 
 
 

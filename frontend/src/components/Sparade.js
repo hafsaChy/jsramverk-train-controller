@@ -1,6 +1,5 @@
-import { Text, View, ScrollView, Button, RefreshControl } from 'react-native';
-import { Picker } from '@react-native-picker/picker';
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, Text, View, ScrollView, Button, RefreshControl } from 'react';
+import { Picker } from 'react-datepicker';
 import trafik from '../models/trafik'
 import favorit from '../models/favorit'
 import { Base, Forms, Typography } from '../styles/index.js';
