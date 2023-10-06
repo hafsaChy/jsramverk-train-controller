@@ -1,23 +1,29 @@
-require('dotenv').config()
+require('dotenv').config();
 
-const express = require('express')
-const cors = require('cors')
-const morgan = require('morgan')
-const bodyParser = require('body-parser')
+const express = require('express');
+const cors = require('cors');
+const morgan = require('morgan');
+const path = require('path');
+const bodyParser = require('body-parser');
 
 const fetchTrainPositions = require('./models/trains.js')
 const delayed = require('./routes/delayed.js');
 const tickets = require('./routes/tickets.js');
 const codes = require('./routes/codes.js');
+const auth = require("./route/auth.js");
+const users = require("./route/users.js");
+const data = require("./route/data.js");
 
-const app = express()
+const authModel = require("./models/auth.js");
+
+const app = express();
 const httpServer = require("http").createServer(app);
 
 app.use(cors());
 app.options('*', cors());
 
 app.disable('x-powered-by');
-
+app.set("view engine", "ejs");
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
@@ -35,6 +41,14 @@ app.get('/', (req, res) => {
       data: 'Hello World!'
   })
 })
+
+app.use(express.static(path.join(__dirname, "public")));
+
+app.all('*', authModel.checkAPIKey);
+
+app.use("/users", users);
+app.use("/data", data);
+app.use("/", auth);
 
 app.use("/delayed", delayed);
 app.use("/tickets", tickets);
