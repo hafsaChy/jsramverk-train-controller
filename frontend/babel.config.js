@@ -15,17 +15,18 @@ module.exports = function(api) {
       ["@babel/plugin-transform-class-properties", { 
         "loose": true 
       }],
+      ["@babel/plugin-syntax-class-properties"],
       [
         "module-resolver",
         {
-          root: ["./App"],
+          root: ["./App.tsx"],
+          extensions: [".js", ".ios.js", ".android.js"],
           resolvePath(sourcePath, currentFile, ...otherparams /* opts */) {
             return resolvePath(sourcePath, currentFile, otherparams);
           },
-          loglevel: 'verbose'
-        }
-      ],
-      ["@babel/plugin-syntax-class-properties"],
+          loglevel: "verbose",
+        },
+      ]
     ]
   };
 };

@@ -3,6 +3,7 @@
     "name": "frontend",
     "slug": "frontend",
     "version": "1.0.0",
+    "entryPoint": "node_modules/expo/AppEntry.js",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -28,6 +29,11 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "platforms": [
+      "android",
+      "ios",
+      "web"
+    ]
   }
 }
