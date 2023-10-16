@@ -2,11 +2,11 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
-  "main": "App.js",
+  "main": "app.mjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "watch": "nodemon server.js"
+    "start": "node app.mjs",
+    "watch": "nodemon app.mjs"
   },
   "keywords": [],
   "author": "",
