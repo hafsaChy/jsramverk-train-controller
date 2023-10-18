@@ -3,7 +3,7 @@ import EventSource from 'eventsource';
 
 async function fetchTrainPositions(io) {
   const query = `<REQUEST>
-    <LOGIN authenticationkey="${process.env.TRAFIKVERKET_API_KEY}" />
+    <LOGIN authenticationkey="${process.env.REACT_APP_TRV_APIKEY}" />
     <QUERY
         sseurl="true"
         namespace="järnväg.trafikinfo"

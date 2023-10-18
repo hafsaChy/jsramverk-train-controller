@@ -2,9 +2,9 @@
 import fetch from 'node-fetch';
 
 const delayed = {
-    getDelayedTrains: function getDelayedTrains(req, res) {
+    getDelayedTrains: async function getDelayedTrains(req, res) {
         const query = `<REQUEST>
-                    <LOGIN authenticationkey="${process.env.TRAFIKVERKET_API_KEY}" />
+                    <LOGIN authenticationkey="${process.env.REACT_APP_TRV_APIKEY}" />
                     <QUERY objecttype="TrainAnnouncement" orderby='AdvertisedTimeAtLocation' schemaversion="1.8">
                         <FILTER>
                         <AND>
@@ -32,21 +32,19 @@ const delayed = {
             </REQUEST>`;
 
 
-            const response = fetch(
+            const response = await fetch(
                 "https://api.trafikinfo.trafikverket.se/v2/data.json", {
                     method: "POST",
                     body: query,
                     headers: { "Content-Type": "text/xml" }
                 }
-            ).then(function(response) {
-                return response.json()
-            }).then(function(result) {
-                return res.json({
-                    data: result.RESPONSE.RESULT[0].TrainAnnouncement
-                });
-            })
-    }
-};
-
-// module.exports = delayed;
-export default delayed;
+            );
+            const result = await response.json();
+    
+            return result.RESPONSE.RESULT[0].TrainAnnouncement;
+        }
+    };
+    
+    // module.exports = delayed;
+    export default delayed;
+    
