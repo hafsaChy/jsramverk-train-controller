@@ -70,14 +70,6 @@ In modern front-end web development, JavaScript frameworks are an essential part
 React is flexible but has high complexity, which requires good knowledge of Javascript.[^7]
 React is the largest and most popular framework and is judged to be that framework which is most relevant in the labor market.
 
-### design
-
-### inspiration
-
-### colors
-
-### fonts
-
 ## References
 [^1]: https://www.martellosecurity.com/kb/mitre/cwe/1333/, last visited 05-09-2023.
 [^2]: https://learn.snyk.io/lesson/redos/, last visited 05-09-2023.
