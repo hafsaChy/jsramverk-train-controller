@@ -14,14 +14,14 @@
 }
 
 .App-header {
-  background-color: #082b6f;
+  background-color: #840b0b;
   min-height: 20vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(30px + 2vmin);
-  color: white;
+  color: rgb(238, 234, 234);
 }
 
 .App-link {
@@ -37,10 +37,52 @@
   }
 }
 
-body, html {
-  height: 100%;
+* {
   margin: 0;
-  font-family: Arial, sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  background-color: #1c1b1b;
+  color: rgb(238, 234, 234);
+  line-height: 1.4;
+  font-family: monospace;
+  font-size: calc(10px + 1vmin);
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+a {
+  color: rgb(238, 234, 234);
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 2px;
+  padding: 0px;
+}
+
+h1 {
+  font-size: 1.8rem;
+}
+
+h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1.4rem;
 }
 
 p {
@@ -57,9 +99,8 @@ p {
 .delayed {
   height: 100vh;
   width: 40vw;
-  padding: 2rem;
   overflow: scroll;
-  background-color: white;
+  color: rgb(238, 234, 234);
 }
 
 .map {
@@ -208,4 +249,8 @@ p {
   font-size: calc(18px + 1vmin);
   margin: 10px 10px;
   text-align: right;
+}
+
+.link {
+  text-decoration: none;
 }

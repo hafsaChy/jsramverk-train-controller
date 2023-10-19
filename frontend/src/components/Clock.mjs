@@ -15,7 +15,7 @@ export default function Clock() {
 
   return (
     <>
-      <p className="currentTime"><Link to="/">{currentTime.toLocaleTimeString('sv-SE')}</Link></p>
+      <p className="currentTime"><Link to="/" className="link">{currentTime.toLocaleTimeString('sv-SE')}</Link></p>
     </>
   );
 }
