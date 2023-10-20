@@ -7,6 +7,7 @@ Repository for jsramverk course (DV1677), maintained by haco22 and glpa22.
 ```
 # To run the app on http://localhost:9000/ from frontend/
 python3 -m http.server 9000
+node app.mjs
 ```
 
 ## Backend
