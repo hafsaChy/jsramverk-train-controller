@@ -48,13 +48,10 @@ describe('Database Functions', () => {
         const colName = "testCol";
 
         it('should return empty array', async () => {
-            // Ensure the resetCollection function is awaited
-            await resetCollection(colName);
-    
             try {
                 // Ensure the resetCollection function is awaited
                 await resetCollection(colName);
-    
+                console.log("here")
                 const res = await database.getCollection(colName) || [];
                 console.log(res);
     
