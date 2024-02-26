@@ -1,5 +1,7 @@
 const production = {
-    url: 'https://jsramverk-backend-deploy-glpa22.azurewebsites.net'
+    // url: 'https://jsramverk-backend-deploy-glpa22.azurewebsites.net'
+    url: 'https://jsramverk-haco22-glpa22.azurewebsites.net'
+
 };
 const development = {
     url: 'http://localhost:1337'

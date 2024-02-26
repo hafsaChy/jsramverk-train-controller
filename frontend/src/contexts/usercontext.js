@@ -1,6 +1,6 @@
 import { createContext, useState } from "react";
 import { App, Credentials } from "realm-web";
-import { APP_ID } from "../realm/constants";
+import { APP_ID } from "../realm/constants.js";
  
 // Creating a Realm App Instance
 const app = new App(APP_ID);

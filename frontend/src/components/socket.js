@@ -1,5 +1,5 @@
 import { io } from 'socket.io-client';
-import { config } from '../Constants';
+import { config } from '../Constants.js';
 const URL = config.url;
 
 

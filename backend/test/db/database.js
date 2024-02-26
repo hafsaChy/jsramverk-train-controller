@@ -11,8 +11,8 @@ describe('Database Functions', () => {
         // Start an in-memory MongoDB server
         mongoServer = await MongoMemoryServer.create();
         // Set environment variables
-        process.env.ATLAS_USERNAME = 'glopet4559';
-        process.env.ATLAS_PASSWORD = '9Yjx6Qf64dDKEbUr';
+        process.env.ATLAS_USERNAME = 'haco22_1';
+        process.env.ATLAS_PASSWORD = 'rehafsaza05';
         process.env.NODE_ENV = 'test';
     });
 

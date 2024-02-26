@@ -1,9 +1,9 @@
 import { HashRouter, Route, Routes } from "react-router-dom";
-import { UserProvider } from "./contexts/usercontext";
-import Home from "./pages/Homepage";
-import Login from "./pages/Loginpage";
-import PrivateRoute from "./pages/PrivateRoutepage";
-import Signup from "./pages/Signuppage";
+import { UserProvider } from "./contexts/usercontext.js";
+import Home from "./pages/Homepage.js";
+import Login from "./pages/Loginpage.js";
+import PrivateRoute from "./pages/PrivateRoutepage.js";
+import Signup from "./pages/Signuppage.js";
  
 function App() {
  return (

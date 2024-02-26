@@ -3,7 +3,7 @@ import React, { useEffect, useRef } from 'react';
 import * as L from 'leaflet';
 import icon from "leaflet/dist/images/marker-icon.png";
 import iconShadow from "leaflet/dist/images/marker-shadow.png";
-import { socket } from './socket';
+import { socket } from './socket.js';
 
 const Map = () => {
   const mapContainer = useRef(null);

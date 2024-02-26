@@ -1,22 +1,22 @@
 import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
 import { HashRouter as Router, Route, Routes } from 'react-router-dom';
-import { UserProvider } from '../../src/contexts/usercontext';
-import App from '../../src/App';
-import Homepage from '../../src/pages/Homepage';
-import Loginpage from '../../src/pages/Loginpage';
-import PrivateRoutepage from '../../src/pages/PrivateRoutepage';
-import Signuppage from '../../src/pages/Signuppage';
+import { UserProvider } from '../../src/contexts/usercontext.js';
+import App from '../../src/App.js';
+import Homepage from '../../src/pages/Homepage.js';
+import Loginpage from '../../src/pages/Loginpage.js';
+import PrivateRoutepage from '../../src/pages/PrivateRoutepage.js';
+import Signuppage from '../../src/pages/Signuppage.js';
 
 // Mocking usercontext and pages
 jest.mock('../../src/contexts/usercontext', () => ({
   UserProvider: ({ children }) => <div>{children}</div>,
 }));
 
-jest.mock('../../src/pages/Homepage', () => () => <div>Home Page</div>);
-jest.mock('../../src/pages/Loginpage', () => () => <div>Login Page</div>);
-jest.mock('../../src/pages/PrivateRoutepage', () => () => <div>Private Route Page</div>);
-jest.mock('../../src/pages/Signuppage', () => () => <div>Signup Page</div>);
+jest.mock('../../src/pages/Homepage.js', () => () => <div>Home Page</div>);
+jest.mock('../../src/pages/Loginpage.js', () => () => <div>Login Page</div>);
+jest.mock('../../src/pages/PrivateRoutepage.js', () => () => <div>Private Route Page</div>);
+jest.mock('../../src/pages/Signuppage.js', () => () => <div>Signup Page</div>);
 
 describe('App Component', () => {
   it('renders the App component', async () => {

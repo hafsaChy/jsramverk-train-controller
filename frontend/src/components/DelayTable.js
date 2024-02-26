@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import Clock from './Clock'
-import { config } from '../Constants';
+import Clock from './Clock.js'
+import { config } from '../Constants.js';
 const URL = config.url;
 
 const DelayTable = ({ onTrainClick }) => {

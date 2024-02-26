@@ -2,7 +2,7 @@
 Repository for jsramverk course (DV1677), maintained by haco22 and glpa22.
 
 ## Deployment of app
-The deployed backend in Azure can be found in [backend](https://jsramverk-backend-deploy-glpa22.azurewebsites.net) and the deployed application can be found in [frontend](https://www.student.bth.se/~haco22/editor/)
+The deployed backend in Azure can be found in [backend](https://jsramverk-haco22-glpa22.azurewebsites.net) and the deployed application can be found in [frontend](https://www.student.bth.se/~haco22/editor/)
 ## Tests
 #### Backend:
 ```
