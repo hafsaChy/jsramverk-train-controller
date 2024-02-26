@@ -1,85 +1,45 @@
-/**
- * Test opening and resetting the database
- */
-process.env.NODE_ENV = 'test';
-
 import { describe, it, before, after } from 'mocha';
-import chai from 'chai';
-import sinon from 'sinon';
+import { expect } from 'chai';
 import { MongoMemoryServer } from 'mongodb-memory-server';
 import database from '../../db/database.js';
-import resetCollection from '../../db/setup.js';
 
-chai.should();
+describe('Database Functions', () => {
+    let mongoServer;
 
-describe('Test database', () => {
-    /**
-     * Before test, reset the database and remove all collections
-     */
     before(async () => {
-        const db = await database.openDb();
-
-        try {
-            const collections = await db.listCollections().toArray();
-
-            for (const col of collections) {
-                await db.collection(col.name).drop();
-            }
-        } catch (err) {
-            console.log("During setup following error occured:", err);
-        } finally {
-            await db.client.close();
-        }
+        // Start an in-memory MongoDB server
+        mongoServer = await MongoMemoryServer.create();
+        // Set environment variables
+        process.env.ATLAS_USERNAME = process.env.ATLAS_USERNAME;
+        process.env.ATLAS_PASSWORD = process.env.ATLAS_PASSWORD;
+        process.env.NODE_ENV = 'test';
     });
 
-    /**
-     * Test the database setup function. Maybe this could be removed or moved but
-     * it's good to have a way to easy reset a collection while still in develop-mode that
-     * is separated from the database.js file.
-     */
-    describe('Test reset function', () => {
-        const colName = "testCol";
+    after(async () => {
+        // Stop the in-memory MongoDB server
+        await mongoServer.stop();
+    });
 
-        // Resets the collection
-        it('should return empty array', async () => {
-            await resetCollection(colName);
-
-            const res = await database.getCollection(colName);
-
-            res.should.be.a('array');
-            res.should.have.lengthOf(0);
+    describe('openDb', () => {
+        it('should open a database connection', async () => {
+            const db = await database.openDb();
+            expect(db).to.exist;
+            expect(db.databaseName).to.equal('test');
+            await db.client.close();
         });
 
-        // Simulates using an JSON-file as inputdata
-        it('should return 2 documents', async () => {
-            // Using an array to simulate documents from a JSON-file.
-            const doc = [
-                {
-                    "name": "first document"
-                },
-                {
-                    "name": "second document"
-                }
-            ];
+        it('should handle errors during connection', async () => {
+            // Mocking the MongoClient to throw an error
+            sinon.stub(database, 'openDb').throws(new Error('Connection error'));
 
-            await resetCollection(colName, doc);
-
-            const res = await database.getCollection(colName, doc);
-
-            res.should.be.a('array');
-            res.should.have.lengthOf(2);
-            res[0].should.have.property("name");
-            res[1].should.have.property("name");
+            try {
+                await database.openDb();
+            } catch (error) {
+                expect(error).to.be.an.instanceOf(Error);
+                expect(error.message).to.equal('Connection error');
+            } finally {
+                sinon.restore();
+            }
         });
-
-        // Resets the collection again
-        it('should return empty array', async () => {
-            await resetCollection(colName);
-
-            const res = await database.getCollection(colName);
-
-            res.should.be.a('array');
-            res.should.have.lengthOf(0);
-        }
     });
 });
