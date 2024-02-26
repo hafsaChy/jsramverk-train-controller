@@ -1,3 +1,8 @@
+/**
+ * Test opening and resetting the database
+ */
+process.env.NODE_ENV = 'test';
+
 import { describe, it, before, after } from 'mocha';
 import { expect } from 'chai';
 import sinon from 'sinon';
@@ -5,160 +10,79 @@ import { MongoMemoryServer } from 'mongodb-memory-server';
 import database from '../../db/database.js';
 import resetCollection from '../../db/setup.js';
 
-describe('Database Functions', () => {
-    let mongoServer;
+chai.should();
 
+describe('Test database', () => {
+    /**
+     * Before test, reset the database and remove all collections
+     */
     before(async () => {
-        // Start an in-memory MongoDB server
-        mongoServer = await MongoMemoryServer.create();
-        // Set environment variables
-        process.env.ATLAS_USERNAME = process.env.ATLAS_USERNAME;
-        process.env.ATLAS_USERNAME = process.env.ATLAS_USERNAME;
-        process.env.NODE_ENV = 'test';
-    });
+        const db = await database.openDb();
 
-    after(async () => {
-        // Stop the in-memory MongoDB server
-        await mongoServer.stop();
-    });
+        try {
+            const collections = await db.listCollections().toArray();
 
-    describe('openDb', () => {
-        it('should open a database connection', async () => {
-            const db = await database.openDb();
-            expect(db).to.exist;
-            expect(db.databaseName).to.equal('test');
-            await db.client.close();
-        });
-
-        it('should handle errors during connection', async () => {
-            // Mocking the MongoClient to throw an error
-            sinon.stub(database, 'openDb').throws(new Error('Connection error'));
-
-            try {
-                await database.openDb();
-            } catch (error) {
-                expect(error).to.be.an.instanceOf(Error);
-                expect(error.message).to.equal('Connection error');
-            } finally {
-                sinon.restore();
+            for (const col of collections) {
+                await db.collection(col.name).drop();
             }
-        });
+        } catch (err) {
+            console.log("During setup following error occured:", err);
+        } finally {
+            await db.client.close();
+        }
     });
+
+    /**
+     * Test the database setup function. Maybe this could be removed or moved but
+     * it's good to have a way to easy reset a collection while still in develop-mode that
+     * is separated from the database.js file.
+     */
     describe('Test reset function', () => {
         const colName = "testCol";
 
+        // Resets the collection
         it('should return empty array', async () => {
-            try {
-                // Ensure the resetCollection function is awaited
-                await resetCollection(colName);
-                console.log("here")
-                const res = await database.getCollection(colName) || [];
-                console.log(res);
-    
-                // Check if res is an array and has a length of 0
-                res.should.be.a('array');
-                res.should.have.lengthOf(0);
-            } catch (error) {
-                console.error('Error:', error);
-                throw error; // Re-throw the error to fail the test
-            }
+            await resetCollection(colName);
+
+            const res = await database.getCollection(colName);
+
+            res.should.be.a('array');
+            res.should.have.lengthOf(0);
         });
 
-        // Simulates using an JSON-file as input data
-        // it('should return 2 documents', async () => {
-        //     // Using an array to simulate documents from a JSON-file.
-        //     const doc = [
-        //         {
-        //             "name": "first document"
-        //         },
-        //         {
-        //             "name": "second document"
-        //         }
-        //     ];
+        // Simulates using an JSON-file as inputdata
+        it('should return 2 documents', async () => {
+            // Using an array to simulate documents from a JSON-file.
+            const doc = [
+                {
+                    "name": "first document"
+                },
+                {
+                    "name": "second document"
+                }
+            ];
 
-        //     await resetCollection(colName, doc);
+            await resetCollection(colName, doc);
 
-        //     const res = await database.getCollection(colName, doc);
+            const res = await database.getCollection(colName, doc);
 
-        //     res.should.be.a('array');
-        //     res.should.have.lengthOf(2);
-        //     res[0].should.have.property("name");
-        //     res[1].should.have.property("name");
-        // });
+            res.should.be.a('array');
+            res.should.have.lengthOf(2);
+            res[0].should.have.property("name");
+            res[1].should.have.property("name");
+        });
 
-        // // Resets the collection again
-        // it('should return empty array', async () => {
-        //     await resetCollection(colName);
+        // Resets the collection again
+        it('should return empty array', async () => {
+            await resetCollection(colName);
 
-        //     const res = await database.getCollection(colName);
+            const res = await database.getCollection(colName);
 
-        //     res.should.be.a('array');
-        //     res.should.have.lengthOf(0);
-        // });
+            res.should.be.a('array');
+            res.should.have.lengthOf(0);
+        });
     });
 });
-
-    // describe('Test reset function', () => {
-    //     const colName = "testCol";
-
-    //     // Resets the collection
-    //     it('should return empty array', async () => {
-    //         await resetCollection(colName);
-
-    //         const res = await database.getCollection(colName);
-
-    //         res.should.be.a('array');
-    //         res.should.have.lengthOf(0);
-    //     });
-
-    //     // Simulates using an JSON-file as input data
-    //     it('should return 2 documents', async () => {
-    //         // Using an array to simulate documents from a JSON-file.
-    //         const doc = [
-    //             {
-    //                 "name": "first document"
-    //             },
-    //             {
-    //                 "name": "second document"
-    //             }
-    //         ];
-
-    //         await resetCollection(colName, doc);
-
-    //         const res = await database.getCollection(colName, doc);
-
-    //         res.should.be.a('array');
-    //         res.should.have.lengthOf(2);
-    //         res[0].should.have.property("name");
-    //         res[1].should.have.property("name");
-    //     });
-
-    //     // Resets the collection again
-    //     it('should return empty array', async () => {
-    //         await resetCollection(colName);
-
-    //         const res = await database.getCollection(colName);
-
-    //         res.should.be.a('array');
-    //         res.should.have.lengthOf(0);
-    //     });
-    // });
-
-    // describe'getCollection', () => {
-    //     it('should get a collection from the database', async () => {
-    //         const db = await database.openDb();
-    //         const colName = 'testCol';
-    //         const data = [{"ActivityId":"abcd","ActivityType":"Avgang"}]
-    //         // Insert test data
-    //         await db.collection(colName).insertOne(data);
-
-    //         const result = await database.getCollection(colName);
-
-    //         expect(result).to.deep.equal(data);
-    //         await db.client.close();
-    //     });
-    // });
-// });
 
 
     // describe('getCollection', () => {
