@@ -47,15 +47,21 @@ describe('Database Functions', () => {
     describe('Test reset function', () => {
         const colName = "testCol";
 
-        // Resets the collection
         it('should return empty array', async () => {
+            // Ensure the resetCollection function is awaited
             await resetCollection(colName);
-
-            const res = [];
-            console.log(res)
-
-            res.should.be.a('array');
-            res.should.have.lengthOf(0);
+    
+            // Use try-catch to handle potential errors
+            try {
+                const res = [];
+                console.log(res);
+    
+                res.should.be.a('array');
+                res.should.have.lengthOf(0);
+            } catch (error) {
+                console.error('Error:', error);
+                throw error; // Re-throw the error to fail the test
+            }
         });
 
         // Simulates using an JSON-file as input data
