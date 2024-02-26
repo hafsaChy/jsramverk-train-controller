@@ -21,12 +21,12 @@ describe('Database Functions', () => {
         // Stop the in-memory MongoDB server
         await mongoServer.stop();
     });
-});
+
     describe('openDb', () => {
         it('should open a database connection', async () => {
             const db = await database.openDb();
             expect(db).to.exist;
-            expect(db.databaseName).to.equal('test');
+            expect(db.databaseName).to.equal('test'); // Assuming you are using 'test' as the test database
             await db.client.close();
         });
 
@@ -44,6 +44,7 @@ describe('Database Functions', () => {
             }
         });
     });
+});
 
     // describe('Test reset function', () => {
     //     const colName = "testCol";
