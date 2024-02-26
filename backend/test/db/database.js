@@ -51,11 +51,14 @@ describe('Database Functions', () => {
             // Ensure the resetCollection function is awaited
             await resetCollection(colName);
     
-            // Use try-catch to handle potential errors
             try {
-                const res = [];
+                // Ensure the resetCollection function is awaited
+                await resetCollection(colName);
+    
+                const res = await database.getCollection(colName) || [];
                 console.log(res);
     
+                // Check if res is an array and has a length of 0
                 res.should.be.a('array');
                 res.should.have.lengthOf(0);
             } catch (error) {
