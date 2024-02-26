@@ -3,7 +3,7 @@ import { expect } from 'chai';
 import sinon from 'sinon';
 import { MongoMemoryServer } from 'mongodb-memory-server';
 import database from '../../db/database.js';
-const resetCollection = require('../../db/setup.js');
+import resetCollection from '../../db/setup.js';
 
 describe('Database Functions', () => {
     let mongoServer;
