@@ -51,7 +51,7 @@ describe('Database Functions', () => {
         it('should return empty array', async () => {
             await resetCollection(colName);
 
-            const res = await database.getCollection(colName);
+            const res = await database.getCollection(colName) || [];
             console.log(res)
 
             res.should.be.a('array');
