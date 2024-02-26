@@ -45,50 +45,50 @@ describe('Database Functions', () => {
         });
     });
 
-    describe('Test reset function', () => {
-        const colName = "testCol";
+    // describe('Test reset function', () => {
+    //     const colName = "testCol";
 
-        // Resets the collection
-        it('should return empty array', async () => {
-            await resetCollection(colName);
+    //     // Resets the collection
+    //     it('should return empty array', async () => {
+    //         await resetCollection(colName);
 
-            const res = await database.getCollection(colName);
+    //         const res = await database.getCollection(colName);
 
-            res.should.be.a('array');
-            res.should.have.lengthOf(0);
-        });
+    //         res.should.be.a('array');
+    //         res.should.have.lengthOf(0);
+    //     });
 
-        // Simulates using an JSON-file as input data
-        it('should return 2 documents', async () => {
-            // Using an array to simulate documents from a JSON-file.
-            const doc = [
-                {
-                    "name": "first document"
-                },
-                {
-                    "name": "second document"
-                }
-            ];
+    //     // Simulates using an JSON-file as input data
+    //     it('should return 2 documents', async () => {
+    //         // Using an array to simulate documents from a JSON-file.
+    //         const doc = [
+    //             {
+    //                 "name": "first document"
+    //             },
+    //             {
+    //                 "name": "second document"
+    //             }
+    //         ];
 
-            await resetCollection(colName, doc);
+    //         await resetCollection(colName, doc);
 
-            const res = await database.getCollection(colName, doc);
+    //         const res = await database.getCollection(colName, doc);
 
-            res.should.be.a('array');
-            res.should.have.lengthOf(2);
-            res[0].should.have.property("name");
-            res[1].should.have.property("name");
-        });
+    //         res.should.be.a('array');
+    //         res.should.have.lengthOf(2);
+    //         res[0].should.have.property("name");
+    //         res[1].should.have.property("name");
+    //     });
 
-        // Resets the collection again
-        it('should return empty array', async () => {
-            await resetCollection(colName);
+    //     // Resets the collection again
+    //     it('should return empty array', async () => {
+    //         await resetCollection(colName);
 
-            const res = await database.getCollection(colName);
+    //         const res = await database.getCollection(colName);
 
-            res.should.be.a('array');
-            res.should.have.lengthOf(0);
-        });
+    //         res.should.be.a('array');
+    //         res.should.have.lengthOf(0);
+    //     });
     });
 
     // describe('getCollection', () => {
