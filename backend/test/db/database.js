@@ -1,5 +1,10 @@
+/**
+ * Test the database
+ */
+
 import { describe, it, before, after } from 'mocha';
 import { expect } from 'chai';
+import sinon from 'sinon';
 import { MongoMemoryServer } from 'mongodb-memory-server';
 import database from '../../db/database.js';
 
