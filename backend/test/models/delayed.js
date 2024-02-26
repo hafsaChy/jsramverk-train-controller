@@ -32,7 +32,7 @@
 //                 .post('/v2/data.json', query)
 //                 .reply(200, mockResponse);
 
-//             process.env.TRAFIKVERKET_API_KEY = 'b6dc46030edb46bf97106dba290284f5';
+//             process.env.TRAFIKVERKET_API_KEY = process.env.TRAFIKVERKET_API_KEY;
 
 //             console.log('Before calling getDelayedTrains');
 //             await delayed.getDelayedTrains(req, res);
