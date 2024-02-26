@@ -21,7 +21,7 @@ describe('Database Functions', () => {
         // Stop the in-memory MongoDB server
         await mongoServer.stop();
     });
-
+});
     describe('openDb', () => {
         it('should open a database connection', async () => {
             const db = await database.openDb();
