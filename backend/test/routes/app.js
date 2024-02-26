@@ -21,7 +21,7 @@ describe('Express API Tests', () => {
 
   describe('GET /', () => {
     it('should return a welcome message', async () => {
-      const response = await fetch('https://jsramverk-backend-deploy-glpa22.azurewebsites.net');
+      const response = await fetch('https://jsramverk-haco22-glpa22.azurewebsites.net');
       const responseBody = await response.json();
 
       expect(response.status).to.equal(200);
@@ -31,7 +31,16 @@ describe('Express API Tests', () => {
 
   describe('GET /delayed', () => {
     it('should return delayed train information', async () => {
-      const response = await fetch('https://jsramverk-backend-deploy-glpa22.azurewebsites.net/delayed');
+      const response = await fetch('https://jsramverk-haco22-glpa22.azurewebsites.net/delayed');
+      const responseBody = await response.json();
+
+      expect(response.status).to.equal(200);
+    });
+  });
+
+  describe('GET /codes', () => {
+    it('should return codes information', async () => {
+      const response = await fetch('https://jsramverk-haco22-glpa22.azurewebsites.net/codes');
       const responseBody = await response.json();
 
       expect(response.status).to.equal(200);
