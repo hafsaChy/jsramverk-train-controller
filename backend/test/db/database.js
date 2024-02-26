@@ -25,7 +25,7 @@ describe('Database Functions', () => {
         it('should open a database connection', async () => {
             const db = await database.openDb();
             expect(db).to.exist;
-            expect(db.databaseName).to.equal('test'); // Assuming you are using 'test' as the test database
+            expect(db.databaseName).to.equal('test');
             await db.client.close();
         });
 
