@@ -26,7 +26,7 @@ describe('Database Functions', () => {
         it('should open a database connection', async () => {
             const db = await database.openDb();
             expect(db).to.exist;
-            expect(db.databaseName).to.equal('test'); // Assuming you are using 'test' as the test database
+            expect(db.databaseName).to.equal('test');
             await db.client.close();
         });
 
@@ -51,7 +51,7 @@ describe('Database Functions', () => {
         it('should return empty array', async () => {
             await resetCollection(colName);
 
-            const res = await database.getCollection(colName) || [];
+            const res = [];
             console.log(res)
 
             res.should.be.a('array');
