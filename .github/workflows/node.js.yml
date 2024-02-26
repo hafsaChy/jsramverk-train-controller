@@ -18,6 +18,7 @@ jobs:
     env:
       ATLAS_USERNAME: ${{ secrets.ATLAS_USERNAME }}
       ATLAS_PASSWORD: ${{ secrets.ATLAS_PASSWORD }}
+      TRAFIKVERKET_API_KEY: ${{ secrets.TRAFIKVERKET_API_KEY }}
 
     steps:
     - uses: actions/checkout@v3
