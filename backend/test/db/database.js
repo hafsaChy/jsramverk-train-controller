@@ -44,18 +44,36 @@ describe('Database Functions', () => {
         });
     });
 
+    describe('getCollection', () => {
+        it('should get a collection from the database', async () => {
+            const db = await database.openDb();
+            const colName = 'delayed';
+            const data = [{"ActivityId":"1500adde-f75d-c409-08dc-2a9a9639a12c","ActivityType":"Avgang","AdvertisedTimeAtLocation":"2024-02-26T21:11:00.000+01:00","AdvertisedTrainIdent":"976","Canceled":false,"EstimatedTimeAtLocation":"2024-02-26T21:50:00.000+01:00","FromLocation":[{"LocationName":"Öb","Priority":1,"Order":0}],"LocationSignature":"Cst","OperationalTrainNumber":"976","ToLocation":[{"LocationName":"U","Priority":1,"Order":0}],"TrainOwner":"MÄLAB"},{"ActivityId":"1500adde-f75d-c409-08dc-2a9a5fa41d33","ActivityType":"Avgang","AdvertisedTimeAtLocation":"2024-02-26T21:12:00.000+01:00","AdvertisedTrainIdent":"3841","Canceled":false,"EstimatedTimeAtLocation":"2024-02-26T21:26:00.000+01:00","FromLocation":[{"LocationName":"Uv","Priority":1,"Order":0}],"LocationSignature":"Tof","OperationalTrainNumber":"23851","ToLocation":[{"LocationName":"Vb","Priority":1,"Order":0}],"TrainOwner":"VASTTRAF"}];
+
+            // Insert test data
+            await db.collection(colName).insertMany(data);
+
+            const result = await database.getCollection(colName);
+
+            expect(result).to.deep.equal([{"ActivityId":"1500adde-f75d-c409-08dc-212cad2aba32","ActivityType":"Avgang","AdvertisedTimeAtLocation":"2024-02-14T14:17:00.000+01:00","AdvertisedTrainIdent":"8190","Canceled":true,"EstimatedTimeAtLocation":"2024-02-14T15:03:00.000+01:00","FromLocation":[{"LocationName":"Ör","Priority":{"$numberInt":"1"},"Order":{"$numberInt":"0"}}],"LocationSignature":"Snv","OperationalTrainNumber":"8190","ToLocation":[{"LocationName":"Gä","Priority":{"$numberInt":"1"},"Order":{"$numberInt":"0"}}],"TrainOwner":"TIB"}, {"ActivityId":"1500adde-f75d-c409-08dc-2a9a9639a12c","ActivityType":"Avgang","AdvertisedTimeAtLocation":"2024-02-26T21:11:00.000+01:00","AdvertisedTrainIdent":"976","Canceled":false,"EstimatedTimeAtLocation":"2024-02-26T21:50:00.000+01:00","FromLocation":[{"LocationName":"Öb","Priority":1,"Order":0}],"LocationSignature":"Cst","OperationalTrainNumber":"976","ToLocation":[{"LocationName":"U","Priority":1,"Order":0}],"TrainOwner":"MÄLAB"},{"ActivityId":"1500adde-f75d-c409-08dc-2a9a5fa41d33","ActivityType":"Avgang","AdvertisedTimeAtLocation":"2024-02-26T21:12:00.000+01:00","AdvertisedTrainIdent":"3841","Canceled":false,"EstimatedTimeAtLocation":"2024-02-26T21:26:00.000+01:00","FromLocation":[{"LocationName":"Uv","Priority":1,"Order":0}],"LocationSignature":"Tof","OperationalTrainNumber":"23851","ToLocation":[{"LocationName":"Vb","Priority":1,"Order":0}],"TrainOwner":"VASTTRAF"}]);
+            await db.client.close();
+        });
+    });
+});
+
+
     // describe('getCollection', () => {
     //     it('should get a collection from the database', async () => {
     //         const db = await database.openDb();
-    //         const colName = 'your-collection-name';
-    //         const data = [{ name: 'document1' }, { name: 'document2' }];
+    //         const colName = 'delayed';
+    //         const data = [{"ActivityId":"1500adde-f75d-c409-08dc-2a9a9639a12c","ActivityType":"Avgang","AdvertisedTimeAtLocation":"2024-02-26T21:11:00.000+01:00","AdvertisedTrainIdent":"976","Canceled":false,"EstimatedTimeAtLocation":"2024-02-26T21:50:00.000+01:00","FromLocation":[{"LocationName":"Öb","Priority":1,"Order":0}],"LocationSignature":"Cst","OperationalTrainNumber":"976","ToLocation":[{"LocationName":"U","Priority":1,"Order":0}],"TrainOwner":"MÄLAB"},{"ActivityId":"1500adde-f75d-c409-08dc-2a9a5fa41d33","ActivityType":"Avgang","AdvertisedTimeAtLocation":"2024-02-26T21:12:00.000+01:00","AdvertisedTrainIdent":"3841","Canceled":false,"EstimatedTimeAtLocation":"2024-02-26T21:26:00.000+01:00","FromLocation":[{"LocationName":"Uv","Priority":1,"Order":0}],"LocationSignature":"Tof","OperationalTrainNumber":"23851","ToLocation":[{"LocationName":"Vb","Priority":1,"Order":0}],"TrainOwner":"VASTTRAF"}];
 
     //         // Insert test data
     //         await db.collection(colName).insertMany(data);
 
     //         const result = await database.getCollection(colName);
 
-    //         expect(result).to.deep.equal(data);
+    //         expect(result).to.deep.equal([{"ActivityId":"1500adde-f75d-c409-08dc-212cad2aba32","ActivityType":"Avgang","AdvertisedTimeAtLocation":"2024-02-14T14:17:00.000+01:00","AdvertisedTrainIdent":"8190","Canceled":true,"EstimatedTimeAtLocation":"2024-02-14T15:03:00.000+01:00","FromLocation":[{"LocationName":"Ör","Priority":{"$numberInt":"1"},"Order":{"$numberInt":"0"}}],"LocationSignature":"Snv","OperationalTrainNumber":"8190","ToLocation":[{"LocationName":"Gä","Priority":{"$numberInt":"1"},"Order":{"$numberInt":"0"}}],"TrainOwner":"TIB"}, {"ActivityId":"1500adde-f75d-c409-08dc-2a9a9639a12c","ActivityType":"Avgang","AdvertisedTimeAtLocation":"2024-02-26T21:11:00.000+01:00","AdvertisedTrainIdent":"976","Canceled":false,"EstimatedTimeAtLocation":"2024-02-26T21:50:00.000+01:00","FromLocation":[{"LocationName":"Öb","Priority":1,"Order":0}],"LocationSignature":"Cst","OperationalTrainNumber":"976","ToLocation":[{"LocationName":"U","Priority":1,"Order":0}],"TrainOwner":"MÄLAB"},{"ActivityId":"1500adde-f75d-c409-08dc-2a9a5fa41d33","ActivityType":"Avgang","AdvertisedTimeAtLocation":"2024-02-26T21:12:00.000+01:00","AdvertisedTrainIdent":"3841","Canceled":false,"EstimatedTimeAtLocation":"2024-02-26T21:26:00.000+01:00","FromLocation":[{"LocationName":"Uv","Priority":1,"Order":0}],"LocationSignature":"Tof","OperationalTrainNumber":"23851","ToLocation":[{"LocationName":"Vb","Priority":1,"Order":0}],"TrainOwner":"VASTTRAF"}]);
     //         await db.client.close();
     //     });
 
