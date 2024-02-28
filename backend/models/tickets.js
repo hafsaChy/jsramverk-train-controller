@@ -37,7 +37,6 @@ const tickets = {
     updateTicket: async function updateTicket(args) {
         const db = await database.openDb();
         const collection = await db.collection(tickets.collectionName);
-        // Create ObjectId based on given _id string
         const ticketId = new ObjectId(args._id);
 
         const result = await collection.updateOne(
