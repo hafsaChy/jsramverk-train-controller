@@ -1,5 +1,5 @@
 /**
- * Test opening and resetting the database
+ * Test models
  */
 
 import { describe, it, before, after } from 'mocha';
@@ -8,6 +8,8 @@ import sinon from 'sinon';
 import { MongoMemoryServer } from 'mongodb-memory-server';
 import database from '../../db/database.js';
 import resetCollection from '../../db/setup.js';
+import tickets from '../../models/tickets.js';
+
 const { expect, should } = chai;
 
 // Enable 'should' style
@@ -50,7 +52,7 @@ describe('Test model', () => {
         let ticketId = null;
         // Get tickets, should be empty
         it('should return empty array', async () => {
-            const res = await ticketsModel.getTickets();
+            const res = await tickets.getTickets();
 
             res.should.be.a('array');
             res.should.have.lengthOf(0);
@@ -62,7 +64,7 @@ describe('Test model', () => {
                 trainnumber: "13579",
                 traindate: "1984-01-01"
             };
-            const res = await ticketsModel.createTicket(inData);
+            const res = await tickets.createTicket(inData);
 
             res.should.be.a('object');
             res.should.have.property('_id');
@@ -73,7 +75,7 @@ describe('Test model', () => {
         });
 
         it('should return array with one item', async () => {
-            const res = await ticketsModel.getTickets();
+            const res = await tickets.getTickets();
 
             res.should.be.a('array');
             res.should.have.lengthOf(1);
@@ -85,7 +87,7 @@ describe('Test model', () => {
             let error;
 
             try {
-                await ticketsModel.createTicket();
+                await tickets.createTicket();
             } catch (e) {
                 error = e;
             }
@@ -99,13 +101,13 @@ describe('Test model', () => {
                 code: "ANAedit020"
             }
             
-            let res = await ticketsModel.updateTicket(args)
+            let res = await tickets.updateTicket(args)
 
             res.should.be.a('object');
             res.should.have.property('_id');
             res.code.should.equal('ANAedit020');
 
-            res = await ticketsModel.getTickets();
+            res = await tickets.getTickets();
             res[0].code.should.equal('ANAedit020');
         });
 
@@ -114,13 +116,13 @@ describe('Test model', () => {
                 _id: ticketId,
             }
             
-            let res = await ticketsModel.deleteTicket(args)
+            let res = await tickets.deleteTicket(args)
 
             res.should.be.a('object');
             res.should.have.property('_id');
             res._id.should.equal(ticketId);
 
-            res = await ticketsModel.getTickets();
+            res = await tickets.getTickets();
             res.should.be.a('array');
             res.should.have.lengthOf(0);
         });
