@@ -3,13 +3,16 @@
  */
 
 import { describe, it, before, after } from 'mocha';
-import { expect, chai } from 'chai';
-//import chai from 'chai';
+//import { expect } from 'chai';
+import chai from 'chai';
 import sinon from 'sinon';
 import { MongoMemoryServer } from 'mongodb-memory-server';
 import database from '../../db/database.js';
 import resetCollection from '../../db/setup.js';
-chai.should()
+const { expect, should } = chai;
+
+// Enable 'should' style
+should();
 
 describe('Database Functions', () => {
     let mongoServer;
