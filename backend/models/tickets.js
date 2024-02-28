@@ -79,8 +79,7 @@ const tickets = {
     }
 };
 
-module.exports = tickets;
-
+export default tickets;
 
 
 // import database from '../db/database.js';
