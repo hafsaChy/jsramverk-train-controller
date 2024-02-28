@@ -31,9 +31,9 @@ describe('Test model', () => {
         try {
             const col = await db.collection(colName);
 
-            await col.deleteMany(); // This deletes the data in the collection
+            await col.deleteMany();
         } catch (err) {
-            console.log("During setup following error occured:", err);
+            console.log("Error:", err);
         } finally {
             await db.client.close();
         }
@@ -45,9 +45,6 @@ describe('Test model', () => {
         await mongoServer.stop();
     });
 
-    /**
-     * Test the model ticketssetup
-     */
     describe('tickets', () => {
         let ticketId = null;
         // Get tickets, should be empty
@@ -60,17 +57,15 @@ describe('Test model', () => {
 
         it('should data and array with 1 ticket', async () => {
             const inData = {
-                code: "ANAtest03",
-                trainnumber: "13579",
-                traindate: "1984-01-01"
+                code: "aBcd123",
+                trainnumber: "12345",
+                traindate: "2023-09-01"
             };
             const res = await tickets.createTicket(inData);
 
             res.should.be.a('object');
             res.should.have.property('_id');
-            res.code.should.equal('ANAtest03');
-
-            // Set ticket id to use in other test
+            res.code.should.equal('aBcd123');
             ticketId = res._id;
         });
 
@@ -80,7 +75,9 @@ describe('Test model', () => {
             res.should.be.a('array');
             res.should.have.lengthOf(1);
             res[0].should.have.property('_id');
-            res[0].trainnumber.should.equal('13579');
+            res[0].trainnumber.should.equal('12345');
+            res[0].traindate.should.equal('2023-09-01');
+
         });
 
         it('should throw TypeError', async () => {
@@ -98,17 +95,17 @@ describe('Test model', () => {
         it('should change code on ticket', async () => {
             const args = {
                 _id: ticketId,
-                code: "ANAedit020"
+                code: "aBcd123updated"
             }
             
             let res = await tickets.updateTicket(args)
 
             res.should.be.a('object');
             res.should.have.property('_id');
-            res.code.should.equal('ANAedit020');
+            res.code.should.equal('aBcd123updated');
 
             res = await tickets.getTickets();
-            res[0].code.should.equal('ANAedit020');
+            res[0].code.should.equal('aBcd123updated');
         });
 
         it('delete should empty collection', async () => {
