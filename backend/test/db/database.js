@@ -56,7 +56,7 @@ describe('Database Functions', () => {
     describe('Test reset function', () => {
         const colName = "testCol";
 
-        Resets the collection
+        // Resets the collection
         it('should return empty array', async () => {
             await resetCollection(colName);
 
