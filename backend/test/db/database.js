@@ -3,7 +3,6 @@
  */
 
 import { describe, it, before, after } from 'mocha';
-//import { expect } from 'chai';
 import chai from 'chai';
 import sinon from 'sinon';
 import { MongoMemoryServer } from 'mongodb-memory-server';
@@ -13,7 +12,7 @@ const { expect, should } = chai;
 
 // Enable 'should' style
 should();
-
+// test database functions
 describe('Database Functions', () => {
     let mongoServer;
 
@@ -57,36 +56,34 @@ describe('Database Functions', () => {
     describe('Test reset function', () => {
         const colName = "testCol";
 
-        // Resets the collection
-        // it('should return empty array', async () => {
-        //     await resetCollection(colName);
+        Resets the collection
+        it('should return empty array', async () => {
+            await resetCollection(colName);
 
-        //     const res = await database.getCollection(colName);
+            const res = await database.getCollection(colName);
 
-        //     res.should.be.a('array');
-        //     res.should.have.lengthOf(0);
-        // });
+            res.should.be.a('array');
+            res.should.have.lengthOf(0);
+        });
 
-        // Simulates using an JSON-file as inputdata
-        it('should return 2 documents', async () => {
-            // Using an array to simulate documents from a JSON-file.
-            const doc = [
+        it('should return 2 elements', async () => {
+            const data = [
                 {
-                    "name": "first document"
+                    "name1": "first element"
                 },
                 {
-                    "name": "second document"
+                    "name2": "second element"
                 }
             ];
 
-            await resetCollection(colName, doc);
+            await resetCollection(colName, data);
 
-            const res = await database.getCollection(colName, doc);
+            const res = await database.getCollection(colName, data);
 
             res.should.be.a('array');
             res.should.have.lengthOf(2);
-            res[0].should.have.property("name");
-            res[1].should.have.property("name");
+            res[0].should.have.property("name1");
+            res[1].should.have.property("name2");
         });
 
         // Resets the collection again
